@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Anek_Bangla } from "next/font/google";
 import "./globals.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Topbar from "@/components/Topbar";
+import Footer from "@/components/Footer";
 
 
 const geistSans = Geist({
@@ -31,13 +32,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="bn"
       className={`${geistSans.variable} ${geistMono.variable} ${anekBangla.variable} h-full antialiased`}
-    >
+    > <Topbar/>
       <body className={`${anekBangla.className} min-h-full flex flex-col`}>
-
-        <Topbar/>
-
         {children}
       </body>
+      <Footer/>
     </html>
   );
 }
