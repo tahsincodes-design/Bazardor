@@ -1,3 +1,10 @@
 @import "tailwindcss";
+@plugin "daisyui";
+@import "@heroui/styles";
 
+@theme {
+  --font-bangla: var(--font-anek-bangla);
+
+  
+}
 
