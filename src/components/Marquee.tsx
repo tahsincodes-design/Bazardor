@@ -75,7 +75,7 @@ const Marquee = async ({ direction = "left", duration = 60 }: MarqueeProps) => {
         });
 
     return (
-        <div className="bazar-marquee w-full overflow-hidden border-y border-dashed border-sky-300 bg-white py-2.5">
+        <div className="bazar-marquee w-full overflow-hidden border-y  border-sky-300 bg-white py-2.5">
             <style>{`
         @keyframes bazar-scroll {
           from { transform: translateX(0); }

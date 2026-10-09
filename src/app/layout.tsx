@@ -32,11 +32,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="bn"
       className={`${geistSans.variable} ${geistMono.variable} ${anekBangla.variable} h-full antialiased`}
-    > <Topbar/>
+    > 
       <body className={`${anekBangla.className} min-h-full flex flex-col`}>
+        <Topbar/>
         {children}
+        <Footer/>
       </body>
-      <Footer/>
+      
     </html>
   );
 }
