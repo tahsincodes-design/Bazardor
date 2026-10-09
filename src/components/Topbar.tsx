@@ -2,6 +2,7 @@ import Link from "next/link";
 import Navbar from "./Navbar";
 import Marquee from "./Marquee";
 import HeaderDate from "./HeaderDate";
+import UserInfo from "./UserInfo";
 
 export default function TopBar() {
     return (
@@ -20,19 +21,8 @@ export default function TopBar() {
                     </div>
                 </Link>
 
-                <div className="flex items-center space-x-3">
-                    <Link
-                        href="/login"
-                        className="px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:text-emerald-600"
-                    >
-                        সাইন ইন
-                    </Link>
-                    <Link
-                        href="/register"
-                        className="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white shadow-xs transition-colors hover:bg-emerald-700"
-                    >
-                        সাইন আপ
-                    </Link>
+                <div>
+                    <UserInfo/>
                 </div>
             </div>
 

@@ -40,7 +40,7 @@ export default async function Home() {
       <Hero />
 
       <div className="mx-auto max-w-7xl px-4">
-        {/* আজ দাম বেড়েছে */}
+  
         <h2 className="mt-6 text-lg font-bold text-slate-900">
           <span className="mr-2 text-sm text-red-600">▲</span>আজ দাম বেড়েছে
         </h2>
@@ -50,7 +50,6 @@ export default async function Home() {
           ))}
         </div>
 
-        {/* আজ দাম কমেছে */}
         <h2 className="mt-8 text-lg font-bold text-slate-900">
           <span className="mr-2 text-sm text-green-600">▼</span>আজ দাম কমেছে
         </h2>
@@ -60,7 +59,6 @@ export default async function Home() {
           ))}
         </div>
 
-        {/* সব পণ্য */}
         <h2 className="mt-8 text-lg font-bold text-slate-900">সব পণ্য</h2>
         <p className="mt-1 text-xs text-slate-500">
           মোট {String(products.length).replace(/\d/g, (d) => "০১২৩৪৫৬৭৮৯"[Number(d)])}টি পণ্য দেখানো হচ্ছে

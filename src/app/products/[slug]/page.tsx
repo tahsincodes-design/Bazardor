@@ -101,7 +101,7 @@ const ProductContent = async ({ params }: ProductPageProps) => {
 
     return (
         <div className="mx-auto max-w-5xl px-4">
-            {/* Breadcrumb */}
+         
             <nav className="mb-4 flex items-center gap-2 text-xs text-slate-500">
                 <Link href="/" className="hover:text-emerald-700">
                     হোম
@@ -117,7 +117,7 @@ const ProductContent = async ({ params }: ProductPageProps) => {
                 <span className="text-slate-800">{product.nameBn}</span>
             </nav>
 
-            {/* Header Card Component */}
+      
             <ProductHeaderCard
                 product={product}
                 unit={unit}
@@ -126,7 +126,7 @@ const ProductContent = async ({ params }: ProductPageProps) => {
                 arrow={arrow}
             />
 
-            {/* Summary Section */}
+     
             <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-xs">
                 <h2 className="text-base font-bold text-slate-900">দামের সারসংক্ষেপ</h2>
                 <div className="mt-3 grid gap-3 sm:grid-cols-3">
@@ -158,7 +158,7 @@ const ProductContent = async ({ params }: ProductPageProps) => {
                     />
                 </div>
 
-                {/* Market Table Component */}
+          
                 <MarketTable markets={markets} />
             </div>
         </div>
