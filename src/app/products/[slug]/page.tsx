@@ -6,6 +6,9 @@ import { ProductHeaderCard } from "@/components/ProductHeaderCard";
 import { MarketTable, Market } from "@/components/MarketTable";
 import { toBn, unitBn } from "@/types/formatter";
 
+// export const dynamicParams = true;
+// export const revalidate = 300;
+
 interface Product {
     id: number;
     slug: string;
@@ -62,7 +65,9 @@ const ProductContent = async ({ params }: ProductPageProps) => {
     const all = await getProducts();
     const product = all.find((p) => p.slug === slug);
 
-    if (!product) notFound();
+    if (!product) {
+        notFound();
+    }
 
     const detail = await getDetail(product.id);
     const markets = (detail?.markets ?? []).map((m) => ({
@@ -101,7 +106,7 @@ const ProductContent = async ({ params }: ProductPageProps) => {
 
     return (
         <div className="mx-auto max-w-5xl px-4">
-         
+            {/* Breadcrumb Navigation */}
             <nav className="mb-4 flex items-center gap-2 text-xs text-slate-500">
                 <Link href="/" className="hover:text-emerald-700">
                     হোম
@@ -117,7 +122,7 @@ const ProductContent = async ({ params }: ProductPageProps) => {
                 <span className="text-slate-800">{product.nameBn}</span>
             </nav>
 
-      
+            {/* Product Header Card */}
             <ProductHeaderCard
                 product={product}
                 unit={unit}
@@ -126,7 +131,7 @@ const ProductContent = async ({ params }: ProductPageProps) => {
                 arrow={arrow}
             />
 
-     
+            {/* Price Summary & Market Table Section */}
             <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-xs">
                 <h2 className="text-base font-bold text-slate-900">দামের সারসংক্ষেপ</h2>
                 <div className="mt-3 grid gap-3 sm:grid-cols-3">
@@ -158,23 +163,33 @@ const ProductContent = async ({ params }: ProductPageProps) => {
                     />
                 </div>
 
-          
                 <MarketTable markets={markets} />
             </div>
         </div>
     );
 };
 
+
+const ProductSkeleton = () => (
+    <div className="mx-auto max-w-5xl px-4 animate-pulse space-y-4">
+        <div className="h-4 w-48 rounded bg-slate-200" />
+        <div className="h-40 rounded-2xl bg-white border border-slate-200 p-5 shadow-xs" />
+        <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-xs space-y-4">
+            <div className="h-5 w-36 rounded bg-slate-200" />
+            <div className="grid gap-3 sm:grid-cols-3">
+                <div className="h-20 rounded-xl bg-slate-100" />
+                <div className="h-20 rounded-xl bg-slate-100" />
+                <div className="h-20 rounded-xl bg-slate-100" />
+            </div>
+            <div className="h-48 rounded-xl bg-slate-100 mt-4" />
+        </div>
+    </div>
+);
+
 const ProductPage = ({ params }: ProductPageProps) => {
     return (
-        <div className="bg-emerald-50/60 pb-10 pt-6">
-            <Suspense
-                fallback={
-                    <div className="mx-auto max-w-5xl px-4">
-                        <div className="h-32 animate-pulse rounded-2xl bg-white" />
-                    </div>
-                }
-            >
+        <div className="bg-emerald-50/60 pb-10 pt-6 min-h-[calc(100vh-120px)]">
+            <Suspense fallback={<ProductSkeleton />}>
                 <ProductContent params={params} />
             </Suspense>
         </div>

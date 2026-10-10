@@ -1,9 +1,30 @@
+"use client";
+
+import { useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
+import toast from "react-hot-toast";
 import Link from "next/link";
 import SignInSection from "@/components/SignInSection";
+
+function RedirectToastListener() {
+    const searchParams = useSearchParams();
+
+    useEffect(() => {
+        if (searchParams.get("redirected") === "true") {
+            toast.error("বিস্তারিত দেখতে বা পেজে প্রবেশ করতে প্রথমে সাইন ইন করুন!");
+        }
+    }, [searchParams]);
+
+    return null;
+}
 
 export default function SignInPage() {
     return (
         <div className="flex min-h-[calc(100vh-80px)] flex-col items-center justify-center bg-emerald-50/40 px-4 py-8">
+            <Suspense fallback={null}>
+                <RedirectToastListener />
+            </Suspense>
+
             <div className="mb-6 text-center">
                 <h1 className="text-2xl font-bold text-slate-900">সাইন ইন</h1>
                 <p className="mt-1 text-xs text-slate-500">

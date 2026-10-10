@@ -25,7 +25,10 @@ const anekBangla = Anek_Bangla({
 export const metadata: Metadata = {
   title: "Bazardor",
   description: "Bazardor App",
-};
+  icons: {
+    icon: "icon.svg",
+}
+}
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -33,7 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="bn"
       className={`${geistSans.variable} ${geistMono.variable} ${anekBangla.variable} h-full antialiased`}
     > 
-      <body className={`${anekBangla.className} min-h-full flex flex-col`}>
+      <body className={`${anekBangla.className} min-h-full flex flex-col bg-emerald-50/60`}>
         <Topbar/>
         {children}
         <Footer/>
