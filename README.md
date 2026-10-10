@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 বাজার দর (Bazardor)
 
-## Getting Started
+**বাজার দর** হলো নিত্যপ্রয়োজনীয় বাজার দর এক নজরে দেখার জন্য তৈরি একটি আধুনিক ও দ্রুতগতির ফুল-স্ট্যাক ওয়েব অ্যাপ্লিকেশন। বাংলাদেশের সাধারণ মানুষের জন্য দৈনন্দিন বাজার দর, দামের পরিবর্তন (বৃদ্ধি/হ্রাস) এবং বিভিন্ন অঞ্চলের বাজার দর তুলনা সহজ করাই এই প্রজেক্টের মূল উদ্দেশ্য।
 
-First, run the development server:
+---
 
+## 🚀 ব্যবহৃত প্রযুক্তি (Technologies Used)
+
+* **Framework:** Next.js 15 (App Router)
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS & DaisyUI
+* **Authentication:** Better Auth (Google OAuth & Credentials)
+* **Database:** MongoDB
+* **UI Components & Feedback:** React Hot Toast
+* **Deployment:** Vercel
+
+---
+
+## ✨ মূল ৫টি ফিচার (5 Key Features)
+
+1. **দৈনিক বাজার দর ও দামের ট্রেন্ড ট্র্যাকিং (Daily Price & Trend Tracking):** 
+   চাল, ডাল, তেল, সবজিসহ নিত্যপ্রয়োজনীয় পণ্যের আজকের ও গতকালের দামের পার্থক্য (▲ / ▼ / —) এবং সর্বনিম্ন, সর্বাধিক ও গড় দামের বিশদ বিবরণ।
+
+2. **স্মার্ট সার্চ ও দাম অনুযায়ী ফিল্টারিং (Sorting & Filtering):**
+   পণ্য সহজে খোঁজার সুবিধার পাশাপাশি দামের গাণিতিক মান অনুযায়ী কম থেকে বেশি বা বেশি থেকে কম হিসেবে তাত্ক্ষণিক সর্ট করার সুবিধা।
+
+3. **ব্যবহারকারী অথেন্টিকেশন ও প্রোফাইল ব্যবস্থাপনা (Authentication & Profile System):**
+   Better Auth ইন্টিগ্রেশনের মাধ্যমে ইমেইল/পাসওয়ার্ড বা Google অ্যাকাউন্ট দিয়ে সাইন-ইন, প্রোফাইল পিকচার আপডেট এবং পাসওয়ার্ড পরিবর্তনের সুবিধা।
+
+4. **রাউট প্রোটেকশন ও সিস্টেম নোটিফিকেশন (Protected Routes & Toasts):**
+   `proxy.ts` (Middleware)-এর মাধ্যমে `/profile`, `/products`, এবং `/category` রাউট সুরক্ষিত রাখা এবং অননুমোদিত প্রবেশের ক্ষেত্রে অটোমেটিক রিডাইরেক্টসহ টোস্ট নোটিফিকেশন প্রদর্শন।
+
+5. **রেসপন্সিভ ডিজাইন ও মসৃণ স্কেলিটন লোডিং (Responsive UI & Skeleton States):**
+   মোবাইল, ট্যাবলেট ও ডেসক্টপের জন্য ১০০% রেসপন্সিভ লেআউট, কাস্টম ৪-০-৪ পেজ এবং ডাটা ফেচিংয়ের সময় সিমলেস স্কেলিটন লোডিং অ্যানিমেশন।
+
+---
+
+## 🛠️ লোকাল এনভায়রনমেন্টে রান করার নিয়ম (Getting Started)
+
+১. প্রজেক্টটি ক্লোন করুন:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+git clone [https://github.com/tahsincodes-design/Bazardor.git](https://github.com/tahsincodes-design/Bazardor.git)
+cd Bazardor
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
