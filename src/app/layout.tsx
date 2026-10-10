@@ -4,6 +4,7 @@ import "./globals.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Topbar from "@/components/Topbar";
 import Footer from "@/components/Footer";
+import { Suspense } from "react";
 
 
 const geistSans = Geist({
@@ -38,7 +39,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     > 
       <body className={`${anekBangla.className} min-h-full flex flex-col bg-emerald-50/60`}>
         <Topbar/>
-        {children}
+        <Suspense>
+          {children}
+        </Suspense>
         <Footer/>
       </body>
       
