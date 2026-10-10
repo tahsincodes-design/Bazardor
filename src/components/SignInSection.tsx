@@ -80,7 +80,7 @@ export default function SignInSection() {
                             aria-label="Toggle password visibility"
                         >
                             {showPassword ? (
-                                /* Eye Off Icon */
+                      
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
@@ -137,7 +137,6 @@ export default function SignInSection() {
                 <div className="h-px flex-1 bg-slate-200" />
             </div>
 
-            {/* Social Logins */}
             <div className="grid grid-cols-2 gap-3">
                 <button
                     type="button"

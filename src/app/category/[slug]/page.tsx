@@ -2,8 +2,6 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import CategoryProducts from "@/components/CategoryProducts";
 
-// Vercel Deployment & Refresh Fix
-// export const revalidate = 300;
 
 interface Product {
   id: number;
@@ -71,7 +69,6 @@ const CategoryContent = async ({ params }: CategoryPageProps) => {
         </div>
       </div>
 
-      {/* Sort bar + cards */}
       <CategoryProducts products={products} />
     </div>
   );

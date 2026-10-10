@@ -68,7 +68,6 @@ export default function ProfileSection() {
         setIsUpdating(true);
 
         try {
-            // ১. নাম ও প্রোফাইল ছবি আপডেট
             const updateData: { name?: string; image?: string } = {};
             if (name !== user.name) updateData.name = name;
             if (image !== user.image) updateData.image = image;
@@ -82,7 +81,6 @@ export default function ProfileSection() {
                 }
             }
 
-            // ২. পাসওয়ার্ড পরিবর্তন (যদি দেওয়া হয়ে থাকে)
             if (newPassword) {
                 if (!currentPassword) {
                     toast.error("পাসওয়ার্ড পরিবর্তনের জন্য বর্তমান পাসওয়ার্ড প্রয়োজন");
@@ -141,7 +139,6 @@ export default function ProfileSection() {
                     </div>
                 </div>
 
-                {/* Sign Out Button */}
                 <button
                     type="button"
                     onClick={handleSignOut}
@@ -164,7 +161,6 @@ export default function ProfileSection() {
                 </button>
             </div>
 
-            {/* Profile Form Card */}
             <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-xs">
                 <h3 className="text-base font-bold text-slate-900">তথ্য</h3>
 
@@ -184,7 +180,6 @@ export default function ProfileSection() {
                         />
                     </div>
 
-                    {/* Profile Picture Link */}
                     <div>
                         <label className="block text-xs font-semibold text-slate-700">
                             প্রোফাইল ছবি (ইমেজ URL)
@@ -198,7 +193,6 @@ export default function ProfileSection() {
                         />
                     </div>
 
-                    {/* Optional Password Section */}
                     <div className="pt-2 border-t border-slate-100">
                         <p className="text-xs font-bold text-slate-700 mb-3">
                             পাসওয়ার্ড পরিবর্তন (ঐচ্ছিক)
@@ -233,7 +227,6 @@ export default function ProfileSection() {
                         </div>
                     </div>
 
-                    {/* Submit Button */}
                     <button
                         type="submit"
                         disabled={isUpdating}

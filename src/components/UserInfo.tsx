@@ -92,7 +92,7 @@ const UserInfo = () => {
 
                     {isOpen && (
                         <div className="absolute right-0 mt-2 w-60 rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xl shadow-slate-300/40 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-                            {/* User Profile Details */}
+                      
                             <div className="mb-3">
                                 <h4 className="text-sm font-bold text-slate-900 truncate">
                                     {user.name || 'ব্যবহারকারী'}
