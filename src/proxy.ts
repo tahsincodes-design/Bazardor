@@ -4,7 +4,6 @@ import { getSessionCookie } from "better-auth/cookies";
 export async function proxy(request: NextRequest) {
     const sessionCookie = getSessionCookie(request);
 
-    // যে যে পেজগুলো সাইন ইন ছাড়া এক্সেস করা যাবে না
     const protectedRoutes = ["/profile", "/products", "/category"];
     const isProtectedRoute = protectedRoutes.some((route) =>
         request.nextUrl.pathname.startsWith(route)
